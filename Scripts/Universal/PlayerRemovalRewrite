@@ -1,0 +1,73 @@
+local ScreenGui = Instance.new("ScreenGui")
+local ToggleButton = Instance.new("TextButton")
+
+ScreenGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+
+ToggleButton.Parent = ScreenGui
+ToggleButton.Size = UDim2.new(0, 200, 0, 50)
+ToggleButton.Position = UDim2.new(0.5, -100, 0.9, -25)
+ToggleButton.Text = "Toggle Player Delete (OFF)"
+ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ToggleButton.Draggable = true
+ToggleButton.Active = true
+ToggleButton.Selectable = true
+
+local Players = game:GetService("Players")
+local Workspace = game:GetService("Workspace")
+local localPlayer = Players.LocalPlayer
+local isRemovalEnabled = false
+
+local function changePlayerName()
+    local success, err = pcall(function()
+        localPlayer.Name = "CGRS"
+    end)
+    if not success then
+        warn("Failed to change player name: " .. tostring(err))
+    end
+end
+
+changePlayerName()
+
+local function removeUnwanted(item)
+    if item:IsA("Player") and item ~= localPlayer then
+        item:Destroy()
+    elseif item:IsA("Model") and item ~= localPlayer.Character then
+        item:Destroy()
+    end
+end
+
+Players.ChildAdded:Connect(function(child)
+    if isRemovalEnabled and child:IsA("Player") and child ~= localPlayer then
+        child:Destroy()
+    end
+end)
+
+Workspace.ChildAdded:Connect(function(child)
+    if isRemovalEnabled and child:IsA("Model") and child ~= localPlayer.Character then
+        child:Destroy()
+    end
+end)
+
+ToggleButton.MouseButton1Click:Connect(function()
+    isRemovalEnabled = not isRemovalEnabled
+    if isRemovalEnabled then
+        ToggleButton.Text = "Toggle Player Delete (ON)"
+        ToggleButton.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+
+        -- Initial clean-up of existing items
+        for _, player in pairs(Players:GetPlayers()) do
+            if player ~= localPlayer then
+                player:Destroy()
+            end
+        end
+
+        for _, item in pairs(Workspace:GetChildren()) do
+            if item:IsA("Model") and item ~= localPlayer.Character then
+                item:Destroy()
+            end
+        end
+    else
+        ToggleButton.Text = "Toggle Auto-Delete (OFF)"
+        ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+    end
+end)
