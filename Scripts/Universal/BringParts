@@ -1,0 +1,66 @@
+local Players = game:GetService("Players")
+
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "BringPartsGui"
+screenGui.Parent = player:WaitForChild("PlayerGui")
+
+local button = Instance.new("TextButton")
+button.Name = "BringPartsButton"
+button.Size = UDim2.new(0, 200, 0, 50)
+button.Position = UDim2.new(0.5, -100, 0.9, -25)
+button.Text = "Toggle Bring Parts"
+button.TextScaled = true
+button.BackgroundColor3 = Color3.new(0.2, 0.6, 0.8)
+button.Parent = screenGui
+
+local toggle = false
+local dragging = false
+local dragStart = nil
+local startPosition = nil
+
+local function bringParts()
+    if not character:FindFirstChild("HumanoidRootPart") then return end
+    local playerPosition = character.HumanoidRootPart.Position
+
+    for _, object in ipairs(workspace:GetDescendants()) do
+        if object:IsA("BasePart") and not object.Anchored then
+            object.Position = playerPosition + Vector3.new(0, 5, 0) 
+        elseif object:IsA("Model") and object.PrimaryPart and not object.PrimaryPart.Anchored then
+            object:SetPrimaryPartCFrame(CFrame.new(playerPosition + Vector3.new(0, 5, 0)))
+        end
+    end
+end
+
+button.MouseButton1Click:Connect(function()
+    toggle = not toggle
+    if toggle then
+        button.Text = "Stop Bringing Parts"
+        bringParts()
+    else
+        button.Text = "Toggle Bring Parts"
+    end
+end)
+
+button.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position
+        startPosition = button.Position
+    end
+end)
+
+button.InputChanged:Connect(function(input)
+    if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - dragStart
+        button.Position = UDim2.new(startPosition.X.Scale, startPosition.X.Offset + delta.X, startPosition.Y.Scale, startPosition.Y.Offset + delta.Y)
+    end
+end)
+
+button.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = false
+    end
+end)
