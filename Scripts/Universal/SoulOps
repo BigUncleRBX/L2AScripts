@@ -1,0 +1,260 @@
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local B = Instance.new("Frame")
+local TextButton = Instance.new("TextButton")
+local TextButton_2 = Instance.new("TextButton")
+local Othe = Instance.new("Frame")
+local Othe_2 = Instance.new("Frame")
+local Othe_3 = Instance.new("Frame")
+local Main = Instance.new("Frame")
+local KA = Instance.new("TextButton")
+local Misc = Instance.new("Frame")
+local DP = Instance.new("TextButton")
+local ImageButton = Instance.new("ImageButton")
+local TextLabel = Instance.new("TextLabel")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(17, 2, 93)
+MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+MainFrame.BorderSizePixel = 0
+MainFrame.Position = UDim2.new(0.460723728, -159, 0.174623117, 20)
+MainFrame.Size = UDim2.new(0, 407, 0, 477)
+MainFrame.Visible = false
+
+B.Name = "B"
+B.Parent = MainFrame
+B.BackgroundColor3 = Color3.fromRGB(3, 188, 255)
+B.BorderColor3 = Color3.fromRGB(0, 0, 0)
+B.BorderSizePixel = 0
+B.Size = UDim2.new(0, 407, 0, 40)
+
+TextButton.Parent = B
+TextButton.BackgroundColor3 = Color3.fromRGB(64, 255, 6)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.0245700236, 0, 0, 0)
+TextButton.Size = UDim2.new(0, 195, 0, 40)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "Main"
+TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+TextButton_2.Parent = B
+TextButton_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.BorderSizePixel = 0
+TextButton_2.Position = UDim2.new(0.503685474, 0, 0, 0)
+TextButton_2.Size = UDim2.new(0, 195, 0, 40)
+TextButton_2.Font = Enum.Font.SourceSans
+TextButton_2.Text = "Misc"
+TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextButton_2.TextScaled = true
+TextButton_2.TextSize = 14.000
+TextButton_2.TextWrapped = true
+
+Othe.Name = "Othe"
+Othe.Parent = MainFrame
+Othe.BackgroundColor3 = Color3.fromRGB(3, 188, 255)
+Othe.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Othe.BorderSizePixel = 0
+Othe.Position = UDim2.new(0.975429952, 0, 0, 0)
+Othe.Size = UDim2.new(0, 10, 0, 477)
+
+Othe_2.Name = "Othe"
+Othe_2.Parent = MainFrame
+Othe_2.BackgroundColor3 = Color3.fromRGB(3, 188, 255)
+Othe_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Othe_2.BorderSizePixel = 0
+Othe_2.Size = UDim2.new(0, 10, 0, 477)
+
+Othe_3.Name = "Othe"
+Othe_3.Parent = MainFrame
+Othe_3.BackgroundColor3 = Color3.fromRGB(3, 188, 255)
+Othe_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Othe_3.BorderSizePixel = 0
+Othe_3.Position = UDim2.new(0, 0, 0.979035616, 0)
+Othe_3.Size = UDim2.new(0, 407, 0, 10)
+
+Main.Name = "Main"
+Main.Parent = MainFrame
+Main.BackgroundColor3 = Color3.fromRGB(17, 2, 93)
+Main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.415233403, -159, 0.0419287197, 20)
+Main.Size = UDim2.new(0, 386, 0, 426)
+Main.Visible = false
+
+KA.Name = "KA"
+KA.Parent = Main
+KA.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KA.BackgroundTransparency = 2.000
+KA.BorderColor3 = Color3.fromRGB(0, 0, 0)
+KA.BorderSizePixel = 0
+KA.Position = UDim2.new(0.023316063, 0, 0.0258215964, 0)
+KA.Size = UDim2.new(0, 62, 0, 50)
+KA.Font = Enum.Font.JosefinSans
+KA.Text = "KILL ALL BOSSES"
+KA.TextColor3 = Color3.fromRGB(60, 255, 1)
+KA.TextScaled = true
+KA.TextSize = 14.000
+KA.TextStrokeTransparency = 0.000
+KA.TextWrapped = true
+
+Misc.Name = "Misc"
+Misc.Parent = MainFrame
+Misc.BackgroundColor3 = Color3.fromRGB(17, 2, 93)
+Misc.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Misc.BorderSizePixel = 0
+Misc.Position = UDim2.new(0.415233403, -159, 0.0419287197, 20)
+Misc.Size = UDim2.new(0, 386, 0, 426)
+Misc.Visible = false
+
+DP.Name = "DP"
+DP.Parent = Misc
+DP.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DP.BackgroundTransparency = 2.000
+DP.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DP.BorderSizePixel = 0
+DP.Position = UDim2.new(0.0284974091, 0, 0.0234741792, 0)
+DP.Size = UDim2.new(0, 62, 0, 50)
+DP.Font = Enum.Font.JosefinSans
+DP.Text = "DESTROY PLAYER"
+DP.TextColor3 = Color3.fromRGB(255, 0, 0)
+DP.TextScaled = true
+DP.TextSize = 14.000
+DP.TextStrokeTransparency = 0.000
+DP.TextWrapped = true
+
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageButton.BackgroundTransparency = 2.000
+ImageButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.461606354, 0, 0.195979893, 0)
+ImageButton.Size = UDim2.new(0, 43, 0, 43)
+ImageButton.Image = "rbxassetid://14221072660"
+
+TextLabel.Parent = ScreenGui
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 2.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.499558687, 0, 0.187185928, 0)
+TextLabel.Size = UDim2.new(0, 43, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "close/open"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextSize = 14.000
+TextLabel.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextStrokeTransparency = 0.000
+
+-- Scripts:
+
+local function HAXYTNN_fake_script() -- TextButton.Script 
+	local script = Instance.new('Script', TextButton)
+
+	local button = script.Parent
+	local frame = script.Parent.Parent.Parent.Main
+	local frame2 = script.Parent.Parent.Parent.Misc
+	
+	if frame then
+		button.MouseButton1Click:Connect(function()
+			frame.Visible = true
+			frame2.Visible = false
+		end)
+	else
+		warn("Frame not found!")
+	end
+	
+	
+end
+coroutine.wrap(HAXYTNN_fake_script)()
+local function PZXVPZ_fake_script() -- TextButton_2.Script 
+	local script = Instance.new('Script', TextButton_2)
+
+	local button = script.Parent
+	local frame = script.Parent.Parent.Parent.Misc
+	local frame2 = script.Parent.Parent.Parent.Main
+	
+	if frame then
+		button.MouseButton1Click:Connect(function()
+			frame.Visible = true
+			frame2.Visible = false
+		end)
+	else
+		warn("Frame not found!")
+	end
+	
+	
+end
+coroutine.wrap(PZXVPZ_fake_script)()
+local function XIJHNW_fake_script() -- KA.s 
+	local script = Instance.new('Script', KA)
+
+	local button = script.Parent
+	
+	button.MouseButton1Click:Connect(function()
+	    local workspace = game:GetService("Workspace")
+	    for _, model in workspace:GetDescendants() do
+	        if model:IsA("Model") then
+	            local humanoid = model:FindFirstChild("Humanoid")
+	            if humanoid then
+	                local head = model:FindFirstChild("Head")
+	                if head then
+	                    head:Destroy()
+	                end
+	            end
+	        end
+	    end
+	end)
+	
+	
+end
+coroutine.wrap(XIJHNW_fake_script)()
+local function ZOCZCCQ_fake_script() -- DP.s 
+	local script = Instance.new('Script', DP)
+
+	local button = script.Parent
+	
+	
+	button.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Parent.Parent.Parent.Parent:Destroy()
+	end)
+	
+	
+end
+coroutine.wrap(ZOCZCCQ_fake_script)()
+local function WLNVR_fake_script() -- ImageButton.Script 
+	local script = Instance.new('Script', ImageButton)
+
+	local button = script.Parent
+	local frame = button.Parent:FindFirstChild("MainFrame")
+	
+	if frame then
+	    button.MouseButton1Click:Connect(function()
+	        frame.Visible = not frame.Visible
+	    end)
+	else
+	    warn("Frame not found!")
+	end
+	
+	
+end
+coroutine.wrap(WLNVR_fake_script)()
+local function HKRPK_fake_script() -- TextLabel.Script 
+	local script = Instance.new('Script', TextLabel)
+
+	task.wait(5)
+	script.Parent:Destroy()
+end
+coroutine.wrap(HKRPK_fake_script)()
